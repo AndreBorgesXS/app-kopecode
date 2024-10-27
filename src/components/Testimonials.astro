@@ -1,0 +1,45 @@
+---
+import Card from './Card.astro';
+
+const testimonials = [
+  {
+    quote: "A Kopecode transformou completamente nossa abordagem de análise de dados. Os resultados superaram nossas expectativas.",
+    author: "Maria Silva",
+    role: "CEO",
+    company: "TechCorp"
+  },
+  {
+    quote: "A implementação de IA pela Kopecode aumentou nossa eficiência operacional em 40%. Incrível!",
+    author: "João Santos",
+    role: "CTO",
+    company: "DataFlex"
+  },
+  {
+    quote: "Excelente parceria. A equipe da Kopecode é extremamente profissional e entrega resultados consistentes.",
+    author: "Ana Oliveira",
+    role: "Diretora de Inovação",
+    company: "FutureNow"
+  }
+];
+---
+
+<section id="testimonials" class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">O que nossos clientes dizem</h2>
+      <p class="text-gray-300">Histórias de sucesso com a Kopecode</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      {testimonials.map(testimonial => (
+        <Card>
+          <div class="text-2xl text-blue-500 mb-4">"</div>
+          <p class="text-gray-300 mb-6">{testimonial.quote}</p>
+          <div>
+            <div class="font-bold">{testimonial.author}</div>
+            <div class="text-gray-400">{testimonial.role}, {testimonial.company}</div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

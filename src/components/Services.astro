@@ -1,0 +1,67 @@
+---
+import Card from './Card.astro';
+
+const services = [
+  {
+    title: 'Automação de Processos',
+    description: 'Otimize suas operações com RPA e automação inteligente',
+    features: [
+      'Automação de tarefas repetitivas',
+      'Integração de sistemas',
+      'Otimização de fluxos de trabalho'
+    ]
+  },
+  {
+    title: 'Análise de Dados',
+    description: 'Transforme dados em insights acionáveis',
+    features: [
+      'Análise preditiva',
+      'Big Data Analytics',
+      'Dashboards interativos'
+    ]
+  },
+  {
+    title: 'Inteligência Artificial',
+    description: 'Soluções de IA personalizadas para seu negócio',
+    features: [
+      'Machine Learning',
+      'Processamento de Linguagem Natural',
+      'Visão Computacional'
+    ]
+  },
+  {
+    title: 'Consultoria em IA',
+    description: 'Expertise para sua jornada de transformação digital',
+    features: [
+      'Estratégia de dados',
+      'Implementação de IA',
+      'Treinamento e suporte'
+    ]
+  }
+];
+---
+
+<section id="services" class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
+      <p class="text-gray-300">Soluções completas para impulsionar sua transformação digital</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      {services.map(service => (
+        <Card>
+          <h3 class="text-xl font-bold mb-3">{service.title}</h3>
+          <p class="text-gray-300 mb-4">{service.description}</p>
+          <ul class="space-y-2">
+            {service.features.map(feature => (
+              <li class="flex items-center text-gray-300">
+                <span class="text-blue-500 mr-2">✓</span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
