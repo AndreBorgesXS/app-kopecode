@@ -9,3 +9,7 @@ workers_dev = true
 # Especifique o caminho de saída do Astro
 main = "./dist/server/entry.mjs"  # Atualize conforme o caminho do build do Astro
 compatibility_date = "2023-10-26"
+
+[build]
+command = "npm run build"
+upload = { main = "./dist/server/entry.mjs", bucket = "./dist" }
