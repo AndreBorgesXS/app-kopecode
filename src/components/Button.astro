@@ -2,9 +2,10 @@
 interface Props {
   variant?: 'primary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
+  type?: 'button' | 'submit' | 'reset';
 }
 
-const { variant = 'primary', size = 'md' } = Astro.props;
+const { variant = 'primary', size = 'md', type = 'button' } = Astro.props;
 
 const baseStyles = 'inline-flex items-center justify-center rounded-lg font-medium transition-colors';
 
@@ -20,6 +21,6 @@ const sizes = {
 };
 ---
 
-<button class={`${baseStyles} ${variants[variant]} ${sizes[size]}`}>
+<button type={type} class={`${baseStyles} ${variants[variant]} ${sizes[size]}`}>
   <slot />
 </button>
