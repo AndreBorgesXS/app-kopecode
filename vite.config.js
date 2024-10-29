@@ -1,12 +1,14 @@
 
 import { defineConfig } from 'vite';
+import path from 'path';
 import astro from '@astrojs/vite-plugin-astro';
 
 export default defineConfig({
   plugins: [astro()],
+  base: './',
   resolve: {
     alias: {
-      // Defina aliases conforme necessário
+      '@': path.resolve(__dirname, './src').toString(), // Defina aliases conforme necessário
     },
   },
 });
