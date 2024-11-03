@@ -13,12 +13,24 @@ import Layout from '../layouts/Layout.astro';
           Preencha o formulário abaixo para dar o primeiro passo rumo à transformação do seu negócio com Inteligência Artificial.
         </p>
 
-        <form action="#" method="POST" class="space-y-4">
+        <form action="https://send-email-zoho.kopecode.workers.dev" method="POST" class="space-y-4">
           <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none" required>
           <input type="email" name="email" placeholder="Seu E-mail" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none" required>
           <textarea name="mensagem" placeholder="Sua Mensagem" rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none"></textarea>
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >Enviar</button>
+          <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Enviar</button>
         </form>
+        
+        <script>
+          // Verificar o cookie e exibir mensagem
+          if (document.cookie.indexOf('form_submitted=success') > -1) {
+            alert('Formulário enviado com sucesso!');
+          } else if (document.cookie.indexOf('form_submitted=error') > -1) {
+            alert('Erro ao enviar o formulário. Por favor, tente novamente.');
+          }
+
+          // Limpar o cookie
+          document.cookie = 'form_submitted=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        </script>
       </div>
     </div>
   </section>
